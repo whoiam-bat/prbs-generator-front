@@ -26,11 +26,9 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/chart.js/dist/Chart.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {

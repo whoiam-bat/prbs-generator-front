@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { Routes, RouterModule } from '@angular/router';
-import { PlotlyModule } from 'angular-plotly.js';
-
-import * as PlotlyJS from 'plotly.js-dist-min';
 
 import { AppComponent } from './app.component';
 import { WelcomeMassageComponent } from './components/welcome-massage/welcome-massage.component';
@@ -14,7 +11,6 @@ import { AlgorithmPickerComponent } from './components/algorithm-picker/algorith
 import {FormsModule} from "@angular/forms";
 
 
-PlotlyModule.plotlyjs = PlotlyJS;
 
 const routes: Routes = [
   {path: 'lfsr', component: LfsrComponent},
@@ -38,7 +34,6 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    PlotlyModule,
     FormsModule
   ],
   providers: [],

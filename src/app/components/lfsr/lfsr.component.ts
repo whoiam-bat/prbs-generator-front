@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {InputLfsr} from "../../common/input-lfsr";
 import {LfsrService} from "../../services/lfsr.service";
 import {OutputLfsr} from "../../common/output-lfsr";
-import Chart from 'chart.js/auto';
 import 'chartjs-plugin-zoom';
-import {ChartConfiguration} from "chart.js";
+import Chart from 'chart.js/auto';
+import {ChartConfiguration, CategoryScale} from "chart.js";
 
 
 @Component({
@@ -72,6 +72,7 @@ export class LfsrComponent implements OnInit {
         (this.chartInstance as Chart).destroy();
       }
 
+      Chart.register(CategoryScale);
       const chartConfig: ChartConfiguration = {
         type: 'line',
         data: {
@@ -90,6 +91,7 @@ export class LfsrComponent implements OnInit {
           maintainAspectRatio: false,
           scales: {
             x: {
+              type: 'category',
               display: true,
               title: {
                 display: true,
