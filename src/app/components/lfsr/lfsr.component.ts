@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {InputLfsr} from "../../common/input-lfsr";
 import {LfsrService} from "../../services/lfsr.service";
 import {OutputLfsr} from "../../common/output-lfsr";
-import 'chartjs-plugin-zoom';
 import Chart from 'chart.js/auto';
 import {ChartConfiguration, CategoryScale} from "chart.js";
+import zoomPlugin from 'chartjs-plugin-zoom';
 
 
 @Component({
@@ -73,6 +73,7 @@ export class LfsrComponent implements OnInit {
       }
 
       Chart.register(CategoryScale);
+      Chart.register(zoomPlugin);
       const chartConfig: ChartConfiguration = {
         type: 'line',
         data: {
@@ -113,15 +114,13 @@ export class LfsrComponent implements OnInit {
               zoom: {
                 wheel: {
                   enabled: true,
+                  speed: 0.1,
+                  modifierKey: 'alt'
                 },
-                pinch: {
-                  enabled: true,
-                },
-                mode: 'xy',
+                mode: 'xy'
               },
               pan: {
                 enabled: true,
-                mode: 'xy',
               },
             },
           },
