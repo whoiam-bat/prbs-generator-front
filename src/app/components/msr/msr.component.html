@@ -2,33 +2,38 @@
   <div class="row bg-transparent border-0 mt-2 d-flex justify-content-center">
     <div class="row">
       <div class="col-xxl-3">
-        <select class="form-select form-select-lg" #selectedDegreeA (change)="onDegreeChangeA(+selectedDegreeA.value)">
-          <option value="" disabled selected>Select rank matrix A</option>
+        <label for="a-size">Select size of matrix A</label>
+        <select id="a-size" class="form-select form-select-lg" #selectedDegreeA
+                (change)="onDegreeChangeA(+selectedDegreeA.value)">
+          <option value="" disabled selected></option>
           <option *ngFor="let degree of inRange(15)" [ngValue]="degree">
             {{ degree }}
           </option>
         </select>
       </div>
       <div class="col-xxl-3">
-        <select class="form-select form-select-lg" #selectedDegreeB (change)="onDegreeChangeB(+selectedDegreeB.value)">
-          <option value="" disabled selected>Select rank matrix B</option>
+        <label for="b-size">Select size of matrix B</label>
+        <select id="b-size" class="form-select form-select-lg" #selectedDegreeB
+                (change)="onDegreeChangeB(+selectedDegreeB.value)">
+          <option value="" disabled selected></option>
           <option *ngFor="let degree of inRange(15)" [ngValue]="degree">
             {{ degree }}
           </option>
         </select>
       </div>
       <div class="col-xxl-3" *ngIf="apiRequest.rankA && apiRequest.rankB">
-        <select class="form-select form-select-lg" [(ngModel)]="apiRequest.polynomialA">
-          <option value="" disabled selected>Select polynomial A</option>
+        <label for="a-poly">Select polynomial A</label>
+        <select id="a-poly" class="form-select form-select-lg" [(ngModel)]="apiRequest.polynomialA">
+          <option value="" disabled selected></option>
           <option *ngFor="let poly of polynomialsPerDegreeA" [ngValue]="poly.polynomial">
             {{ '<' + poly.polynomial_gf2 + '>'}}
           </option>
         </select>
       </div>
       <div class="col-xxl-3" *ngIf="apiRequest.rankA && apiRequest.rankB">
-        <select class="form-select form-select-lg" [(ngModel)]="apiRequest.polynomialB">
-          <option value="" disabled selected>Select polynomial B</option>
-
+        <label for="b-poly">Select polynomial B</label>
+        <select id="b-poly" class="form-select form-select-lg" [(ngModel)]="apiRequest.polynomialB">
+          <option value="" disabled selected></option>
           <option *ngFor="let poly of polynomialsPerDegreeB" [ngValue]="poly.polynomial">
             {{ '<' + poly.polynomial_gf2 + '>'}}
           </option>
@@ -37,27 +42,27 @@
     </div>
     <div class="row mt-2" *ngIf="apiRequest.polynomialA && apiRequest.polynomialB">
       <div class="col-xxl-3">
-        <select class="form-select form-select-lg" [(ngModel)]="apiRequest.rankS">
-          <option value="" disabled selected>Select rank matrix S</option>
-
+        <label for="s-size">Select rank matrix S</label>
+        <select id="s-size" class="form-select form-select-lg" [(ngModel)]="apiRequest.rankS">
+          <option value="" disabled selected></option>
           <option *ngFor="let rank of inMatrixLength(apiRequest.rankA)" [ngValue]="rank">
             {{ rank }}
           </option>
         </select>
       </div>
       <div class="col-xxl-3">
-        <select class="form-select form-select-lg" [(ngModel)]="apiRequest.i">
-          <option value="" disabled selected>Select i</option>
-
+        <label for="it">Select i</label>
+        <select id="it" class="form-select form-select-lg" [(ngModel)]="apiRequest.i">
+          <option value="" disabled selected></option>
           <option *ngFor="let i of inMatrixLength(apiRequest.rankA)" [ngValue]="i">
             {{ i }}
           </option>
         </select>
       </div>
       <div class="col-xxl-3">
-        <select class="form-select form-select-lg" [(ngModel)]="apiRequest.j">
-          <option value="" disabled selected>Select j</option>
-
+        <label for="jt">Select j</label>
+        <select id="jt" class="form-select form-select-lg" [(ngModel)]="apiRequest.j">
+          <option value="" disabled selected></option>
           <option *ngFor="let j of inMatrixLength(apiRequest.rankB)" [ngValue]="j">
             {{ j }}
           </option>

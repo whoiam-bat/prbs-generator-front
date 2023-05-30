@@ -1,8 +1,8 @@
 <div class="row" id="lfsr-workflow">
   <div class="row bg-transparent border-0 mt-2 d-flex justify-content-center">
     <div class="col-xxl-3">
-      <select class="form-select form-select-lg" #selectedDegree (change)="onDegreeChange(+selectedDegree.value)">
-        <option value="" disabled selected>Select polynomial degree</option>
+      <label for="poly-degree">Select polynomial degree</label>
+      <select id="poly-degree" class="form-select form-select-lg" #selectedDegree (change)="onDegreeChange(+selectedDegree.value)">
         <option *ngFor="let degree of inRange(15)" [value]="degree">
           {{ degree }}
         </option>
@@ -12,9 +12,8 @@
     <div class="col-xxl-4" *ngIf="degree">
       <div class="row bg-transparent border-0">
         <div class="col-xxl-6">
-          <select class="form-select form-select-lg" [(ngModel)]="requestPoly">
-            <option value="" disabled selected>Select polynomial</option>
-
+          <label for="poly">Select polynomial</label>
+          <select id="poly" class="form-select form-select-lg" [(ngModel)]="requestPoly">
             <option *ngFor="let poly of polynomialsPerDegree" [ngValue]="poly">
               {{ '<' + poly.polynomial_gf2 + '>'}}
             </option>
