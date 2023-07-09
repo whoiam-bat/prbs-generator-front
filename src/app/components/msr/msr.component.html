@@ -69,7 +69,7 @@
         </select>
       </div>
       <div class="col-xxl-2 d-flex align-items-center">
-        <button class="btn btn-success" (click)="onSubmit()">Compute</button>
+        <button class="btn btn-success" id="compute-msr" (click)="onSubmit()">Compute</button>
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@
       T-period B | {{ apiResponse.periodB }}
     </div>
     <div class="col">
-      T-period S | {{ apiResponse.experimentalS }}
+      T-period S | {{ apiResponse.theorS }}
     </div>
     <div class="col">
       A-period S | {{ apiResponse.analS }}

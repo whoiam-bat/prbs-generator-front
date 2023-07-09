@@ -6,7 +6,7 @@ export class OutputMsr {
   periodB!: number
   stateMatrixS!: string[][]
   analS!: number
-  experimentalS!: number
+  theorS!: number
   hammingWeightPractice!: number
 
   hammingWeightTheoretical!: number
