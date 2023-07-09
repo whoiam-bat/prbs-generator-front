@@ -11,7 +11,7 @@ export class LfsrService {
 
   private dbUrl: string = 'https://prbs-generator-default-rtdb.europe-west1.firebasedatabase.app/polynomials.json'
 
-  private lfsrEndpoint: string = 'http://127.0.0.1:8000/lfsr'
+  private lfsrEndpoint: string = 'https://generatorapi-1-a7624134.deta.app/lfsr'
 
   constructor(private httpClient: HttpClient) { }
 
