@@ -12,7 +12,8 @@ import {ApiInputMsr} from "../common/api-input-msr";
 export class MsrService {
   private dbUrl: string = 'https://prbs-generator-default-rtdb.europe-west1.firebasedatabase.app/polynomials.json'
 
-  private msrEndpoint: string = 'https://generatorapi-1-a7624134.deta.app/msr'
+  //private msrEndpoint: string = 'https://generatorapi-1-a7624134.deta.app/msr'
+  private msrEndpoint: string = 'https://oleksii-drabchak-prbs-generator.azurewebsites.net/msr'
 
   constructor(private httpClient: HttpClient) {}
 
